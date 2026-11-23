@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="id">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>First Project Flask</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>First Project Flask</h1>
+        <form method="POST" action="{{ url_for('index') }}">
+            <label for="nama">Masukkan Nama:</label>
+            <input id="nama" type="text" name="nama" placeholder="Nama kamu" required>
+            <button type="submit">Kirim</button>
+        </form>
+        {% if hasil %}
+            <p class="hasil" role="status">{{ hasil }}</p>
+        {% endif %}
+    </div>
+</body>
+</html>
